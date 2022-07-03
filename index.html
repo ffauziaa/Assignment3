@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="space" content="width=device-width, initial-scale=3">
+<style>
+body {font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #bbb;
+  background-color: #f1f1;
+}
+
+.tab button {
+  background-color: initial;
+  float: left;
+  cursor: pointer;
+  padding: 18px 20px;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+ 
+
+.tabs {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+
+<div class="tab">
+  <button class="clicks" onclick="whatsinspace(event, 'Black holes')">Black holes</button>
+  <button class="clicks" onclick="whatsinspace(event, 'White holes')">White holes</button>
+  <button class="clicks" onclick="whatsinspace(event, 'Neutron stars')">Neutron stars</button>
+</div>
+
+<div id="Black holes" class="tabs">
+  <h2>Black holes</h2>
+ <p>A black hole is a place in space where gravity pulls so much that even light can not get out. The gravity is so strong because matter has been squeezed into a tiny space. This can happen when a star is dying. Because no light can get out, people can't see black holes.</p>
+</div>
+
+<div id="White holes" class="tabs">
+  <h2>White holes</h2>
+  <p>In general relativity, a white hole is a theoretical region of spacetime and singularity that cannot be entered from the outside, although energy-matter, light and information can escape from it. In this sense, it is the reverse of a black hole, which can be entered only from the outside and from which energy-matter, light and information cannot escape. White holes appear in the theory of eternal black holes. In addition to a black hole region in the future, such a solution of the Einstein field equations has a white hole region in its past.[1] This region does not exist for black holes that have formed through gravitational collapse, however, nor are there any observed physical processes through which a white hole could be formed.</p> 
+</div>
+<div id="Neutron stars" class="tabs">
+  <h2>Neutron stars</h2>
+  <p>Neutron stars are created when giant stars die in supernovas and their cores collapse, with the protons and electrons essentially melting into each other to form neutrons. ( Image credit: NASA/Dana Berry) Neutron stars are city-size stellar objects with a mass about 1.4 times that of the sun.</p>
+</div>
+<script>
+function whatsinspace(space, objects) {
+  var i, tabs, clicks;
+  tabs = document.getElementsByClassName("tabs");
+  for (i = 0; i < tabs.length; i++) {
+    tabs[i].style.display = "none";
+  }
+  clicks = document.getElementsByClassName("clicks");
+  for (i = 0; i < clicks.length; i++) {
+    clicks[i].className = clicks[i].className.replace(" active", "");
+  }
+  document.getElementById(objects).style.display = "block";
+  space.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html>
+
